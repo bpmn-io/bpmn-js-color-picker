@@ -1,0 +1,31 @@
+{
+  "name": "bpmn-js-in-color",
+  "version": "0.1.0",
+  "description": "Bpmn-js with 'bpmn-in-color' extension",
+  "main": "app/index.js",
+  "keywords": [
+    "bpmn-js-example",
+    "bpmn-in-color",
+    "bpmn"
+  ],
+  "author": {
+    "name": "Vladimirs Katusenoks",
+    "url": "https://github.com/vkatushenok"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "brfs": "^1.2.0",
+    "eslint-plugin-mocha": "^2.2.0",
+    "eslint": "^2.11.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-connect": "~1.0.2",
+    "grunt-contrib-copy": "~1.0.0",
+    "grunt-contrib-jshint": "~1.0.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt": "~1.0.1",
+    "load-grunt-tasks": "~3.5.0"
+  },
+  "dependencies": {
+    "bpmn-js": "^0.16.2"
+  }
+}
