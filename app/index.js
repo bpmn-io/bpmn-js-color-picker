@@ -1,14 +1,21 @@
 'use strict';
 
 var fs = require('fs');
-
 var BpmnModeler = require('bpmn-js/lib/Modeler');
 
 var canvas = document.querySelector('#canvas');
 
-var modeler = new BpmnModeler({ container: canvas });
+// Create new Modeler
+var modeler = new BpmnModeler({
+  container: canvas,
+  keyboard: { bindTo: document },
+  additionalModules: [
+    require('./color-picker')
+  ]
+});
 
-var newDiagramXML = fs.readFileSync(__dirname + '/../resources/newDiagram.bpmn', 'utf-8');
+// Load example diagram
+var newDiagramXML = fs.readFileSync(__dirname + '/newDiagram.bpmn', 'utf-8');
 
 modeler.importXML(newDiagramXML, function(err) {
   if (err) {
@@ -16,4 +23,21 @@ modeler.importXML(newDiagramXML, function(err) {
   } else {
     console.log('rendered');
   }
+});
+
+
+// GLOBAL UI
+document.querySelector('#export-to-console').addEventListener('click', function(e) {
+
+  modeler.saveXML({
+    format: true
+  }, function(err, xml) {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(xml);
+    }
+  });
+
+  e.preventDefault();
 });

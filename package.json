@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Bpmn-js with 'bpmn-in-color' extension",
   "main": "app/index.js",
+  "scripts": {
+    "start": "grunt auto-build"
+  },
   "keywords": [
     "bpmn-js-example",
     "bpmn-in-color",
@@ -15,17 +18,18 @@
   "license": "MIT",
   "devDependencies": {
     "brfs": "^1.2.0",
-    "eslint-plugin-mocha": "^2.2.0",
     "eslint": "^2.11.1",
+    "eslint-plugin-mocha": "^2.2.0",
+    "grunt": "~1.0.1",
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-connect": "~1.0.2",
     "grunt-contrib-copy": "~1.0.0",
     "grunt-contrib-jshint": "~1.0.0",
     "grunt-contrib-watch": "~1.0.0",
-    "grunt": "~1.0.1",
     "load-grunt-tasks": "~3.5.0"
   },
   "dependencies": {
-    "bpmn-js": "^0.16.2"
+    "bpmn-js": "^0.16.2",
+    "min-dom": "^0.2.0"
   }
 }

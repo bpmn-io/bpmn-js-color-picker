@@ -37,11 +37,11 @@ module.exports = function(grunt) {
           // make sure we do not include browser shims unnecessarily
           builtins: false,
           insertGlobalVars: {
-            process: function () {
-                return 'undefined';
+            process: function() {
+              return 'undefined';
             },
-            Buffer: function () {
-                return 'undefined';
+            Buffer: function() {
+              return 'undefined';
             }
           }
         },
@@ -52,12 +52,12 @@ module.exports = function(grunt) {
           watch: true
         },
         files: {
-          '<%= config.dist %>/index.js': [ '<%= config.sources %>/**/*.js' ]
+          '<%= config.dist %>/index.js': [ '<%= config.sources %>/index.js' ]
         }
       },
       app: {
         files: {
-          '<%= config.dist %>/index.js': [ '<%= config.sources %>/**/*.js' ]
+          '<%= config.dist %>/index.js': [ '<%= config.sources %>/index.js' ]
         }
       }
     },
@@ -98,7 +98,7 @@ module.exports = function(grunt) {
       samples: {
         files: [ '<%= config.sources %>/**/*.*' ],
         tasks: [ 'copy:app' ]
-      },
+      }
     },
     connect: {
       livereload: {
