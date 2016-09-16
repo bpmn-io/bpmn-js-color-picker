@@ -4,7 +4,7 @@
   "description": "Bpmn-js with 'bpmn-in-color' extension",
   "main": "app/index.js",
   "scripts": {
-    "start": "grunt auto-build"
+    "dev": "grunt auto-build"
   },
   "keywords": [
     "bpmn-js-example",

@@ -8,6 +8,9 @@ var canvas = document.querySelector('#canvas');
 // Create new Modeler
 var modeler = new BpmnModeler({
   container: canvas,
+  additionalModules: [
+    require('./colors')
+  ],
   keyboard: { bindTo: document }
 });
 
