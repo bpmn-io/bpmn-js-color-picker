@@ -2,7 +2,6 @@
   "name": "bpmn-js-in-color",
   "version": "0.1.0",
   "description": "Bpmn-js with 'bpmn-in-color' extension",
-  "main": "app/index.js",
   "scripts": {
     "dev": "grunt auto-build"
   },

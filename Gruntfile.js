@@ -18,13 +18,15 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     config: {
-      sources: 'app',
+      demoSources: 'app',
+      sources: 'colors',
       dist: 'dist'
     },
 
     jshint: {
       src: [
-        ['<%=config.sources %>']
+        '<%=config.demoSources %>',
+        '<%=config.sources %>'
       ],
       options: {
         jshintrc: true
@@ -53,12 +55,12 @@ module.exports = function(grunt) {
           watch: true
         },
         files: {
-          '<%= config.dist %>/index.js': [ '<%= config.sources %>/index.js' ]
+          '<%= config.dist %>/index.js': [ '<%= config.demoSources %>/index.js' ]
         }
       },
       app: {
         files: {
-          '<%= config.dist %>/index.js': [ '<%= config.sources %>/index.js' ]
+          '<%= config.dist %>/index.js': [ '<%= config.demoSources %>/index.js' ]
         }
       }
     },
@@ -67,7 +69,7 @@ module.exports = function(grunt) {
         files: [
           {
             src: resolvePath('diagram-js', 'assets/diagram-js.css'),
-            dest: '<%= config.dist %>/css/diagram-js.css'
+            dest: '<%= config.dist %>/vendor/diagram-js.css'
           }
         ]
       },
@@ -85,9 +87,19 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: '<%= config.sources %>/',
-            src: ['**/*.*', '!**/*.js'],
+            cwd: '<%= config.demoSources %>/',
+            src: ['**/*.*', '!**/*.js', '!**/*.bpmn'],
             dest: '<%= config.dist %>'
+          }
+        ]
+      },
+      colors: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= config.sources %>/',
+            src: ['**/*.css'],
+            dest: '<%= config.dist %>/vendor/colors'
           }
         ]
       }
@@ -96,9 +108,13 @@ module.exports = function(grunt) {
       options: {
         livereload: true
       },
-      samples: {
-        files: [ '<%= config.sources %>/**/*.*' ],
+      app: {
+        files: [ '<%= config.demoSources %>/**/*.*' ],
         tasks: [ 'copy:app' ]
+      },
+      colors: {
+        files: [ '<%= config.sources %>/**/*.*' ],
+        tasks: [ 'copy:colors' ]
       }
     },
     connect: {
