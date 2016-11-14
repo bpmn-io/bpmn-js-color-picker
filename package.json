@@ -25,10 +25,11 @@
     "grunt-contrib-copy": "~1.0.0",
     "grunt-contrib-jshint": "~1.0.0",
     "grunt-contrib-watch": "~1.0.0",
-    "load-grunt-tasks": "~3.5.0"
+    "load-grunt-tasks": "~3.5.0",
+    "tiny-svg": "^0.1.0"
   },
   "dependencies": {
-    "bpmn-js": "^0.16.2",
+    "bpmn-js": "^0.18.0",
     "min-dom": "^0.2.0"
   }
 }

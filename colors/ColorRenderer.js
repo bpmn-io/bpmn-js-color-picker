@@ -4,6 +4,8 @@ var inherits = require('inherits');
 var getBusinessObject = require('bpmn-js/lib/util/ModelUtil').getBusinessObject;
 var BpmnRenderer = require('bpmn-js/lib/draw/BpmnRenderer');
 
+var svgAttr = require('tiny-svg/lib/attr');
+
 
 function ColorRenderer(eventBus, styles, pathMap) {
   // set higher priority then a default 1000 for an existing BpmnRenderer
@@ -21,7 +23,9 @@ function ColorRenderer(eventBus, styles, pathMap) {
     var shape = self.drawShape(visuals, element);
 
     // 2D shape with default white color
-    shape.attr('fill', getBackgroundColor(element) || '#ffffff');
+    svgAttr(shape, {
+      fill: getBackgroundColor(element) || '#ffffff'
+    });
 
     // make sure default renderer is not called anymore
     return shape;
@@ -36,7 +40,9 @@ function ColorRenderer(eventBus, styles, pathMap) {
     var shape = self.drawConnection(visuals, element);
 
     // line shape with default black color
-    shape.attr('stroke', getBackgroundColor(element)  || '#000000');
+    svgAttr(shape, {
+      stroke: getBackgroundColor(element)  || '#000000'
+    });
 
     // make sure default renderer is not called anymore
     return shape;
@@ -52,4 +58,3 @@ function getBackgroundColor(element) {
   var bo = getBusinessObject(element);
   return bo.di.get('color:background-color');
 }
-
