@@ -7,11 +7,11 @@ var BpmnRenderer = require('bpmn-js/lib/draw/BpmnRenderer');
 var svgAttr = require('tiny-svg/lib/attr');
 
 
-function ColorRenderer(eventBus, styles, pathMap) {
+function ColorRenderer(eventBus, styles, pathMap, canvas) {
   // set higher priority then a default 1000 for an existing BpmnRenderer
   var callPriority = 2000;
 
-  BpmnRenderer.call(this, eventBus, styles, pathMap);
+  BpmnRenderer.call(this, eventBus, styles, pathMap, canvas);
 
   var self = this;
 
