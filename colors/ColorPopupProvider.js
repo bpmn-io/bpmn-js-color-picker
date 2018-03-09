@@ -71,18 +71,27 @@ PopupMenuProvider.prototype.getHeaderEntries = function(element) {
 };
 
 
-function createAction(modeling, element, color) {
+function createAction(modeling, element, newColor) {
   // set hex value to an element
   return function() {
     var bo = getBusinessObject(element);
+    var di = bo.di;
 
-    var currentColor = bo.di.get('color:background-color');
-    console.log('Replacing colors from/to: ', currentColor, color);
+    var currentColor = di.get('color:background-color');
 
-    bo.di.set('color:background-color', color);
+    console.log('Replacing colors from/to: ', currentColor, newColor);
+
+    var ns = (
+      newColor ?
+        'http://www.omg.org/spec/BPMN/non-normative/color/1.0' :
+        undefined
+    );
 
     modeling.updateProperties(element, {
-      di: bo.di
+      di: {
+        'xmlns:color': ns,
+        'color:background-color': newColor
+      }
     });
 
   };
