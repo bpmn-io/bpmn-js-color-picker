@@ -55,9 +55,8 @@ ColorContextPadProvider.prototype.getContextPadEntries = function(element) {
 };
 
 
+// helpers //////////////////////
 
-
-////// helpers
 function getStartPosition(canvas, contextPad, element) {
 
   var Y_OFFSET = 5;

@@ -41,7 +41,7 @@ function ColorRenderer(eventBus, styles, pathMap, canvas) {
 
     // line shape with default black color
     svgAttr(shape, {
-      stroke: getBackgroundColor(element)  || '#000000'
+      stroke: getBackgroundColor(element) || '#000000'
     });
 
     // make sure default renderer is not called anymore
