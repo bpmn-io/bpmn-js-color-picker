@@ -23,31 +23,8 @@ module.exports = function(grunt) {
       dist: 'dist'
     },
 
-    jshint: {
-      src: [
-        '<%=config.demoSources %>',
-        '<%=config.sources %>'
-      ],
-      options: {
-        jshintrc: true
-      }
-    },
-
     browserify: {
       options: {
-        browserifyOptions: {
-          // make sure we do not include browser shims unnecessarily
-          builtins: false,
-          debug: true,
-          insertGlobalVars: {
-            process: function() {
-              return 'undefined';
-            },
-            Buffer: function() {
-              return 'undefined';
-            }
-          }
-        },
         transform: [ 'brfs' ]
       },
       watch: {
@@ -55,31 +32,23 @@ module.exports = function(grunt) {
           watch: true
         },
         files: {
-          '<%= config.dist %>/index.js': [ '<%= config.demoSources %>/index.js' ]
+          'dist/index.js': [ 'app/index.js' ]
         }
       },
       app: {
         files: {
-          '<%= config.dist %>/index.js': [ '<%= config.demoSources %>/index.js' ]
+          'dist/index.js': [ 'app/index.js' ]
         }
       }
     },
     copy: {
-      diagram_js: {
-        files: [
-          {
-            src: resolvePath('diagram-js', 'assets/diagram-js.css'),
-            dest: '<%= config.dist %>/vendor/diagram-js.css'
-          }
-        ]
-      },
       bpmn_js: {
         files: [
           {
             expand: true,
-            cwd: resolvePath('bpmn-js', 'assets'),
+            cwd: resolvePath('bpmn-js', 'dist/assets'),
             src: ['**/*.*', '!**/*.js'],
-            dest: '<%= config.dist %>/vendor'
+            dest: 'dist/vendor'
           }
         ]
       },
@@ -87,9 +56,9 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: '<%= config.demoSources %>/',
+            cwd: 'app/',
             src: ['**/*.*', '!**/*.js', '!**/*.bpmn'],
-            dest: '<%= config.dist %>'
+            dest: 'dist'
           }
         ]
       },
@@ -97,9 +66,9 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: '<%= config.sources %>/',
+            cwd: 'colors/',
             src: ['**/*.css'],
-            dest: '<%= config.dist %>/vendor/colors'
+            dest: 'dist/vendor/colors'
           }
         ]
       }
@@ -109,11 +78,11 @@ module.exports = function(grunt) {
         livereload: true
       },
       app: {
-        files: [ '<%= config.demoSources %>/**/*.*' ],
+        files: [ 'app/**/*.*' ],
         tasks: [ 'copy:app' ]
       },
       colors: {
-        files: [ '<%= config.sources %>/**/*.*' ],
+        files: [ 'colors/**/*.*' ],
         tasks: [ 'copy:colors' ]
       }
     },
@@ -125,7 +94,7 @@ module.exports = function(grunt) {
           hostname: 'localhost',
           open: true,
           base: [
-            '<%= config.dist %>'
+            'dist'
           ]
         }
       }
@@ -143,5 +112,5 @@ module.exports = function(grunt) {
     'watch'
   ]);
 
-  grunt.registerTask('default', [ 'jshint', 'build' ]);
+  grunt.registerTask('default', [ 'build' ]);
 };
