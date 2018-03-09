@@ -1,3 +1,8 @@
+> __Note:__ This example exists for educational purposes only. 
+> 
+> Consider using our [built-in color support](https://bpmn.io/blog/posts/2016-colors-bpmn-js.html) to display colors saved in your BPMN 2.0 diagrams.
+
+
 # bpmn-js in color
 
 This example show cases how to extend [bpmn-js](https://github.com/bpmn-io/bpmn-js) with colors based on the [BPMN in Color proposal](https://github.com/bpmn-miwg/bpmn-in-color).
