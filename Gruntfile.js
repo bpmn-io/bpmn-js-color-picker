@@ -15,13 +15,6 @@ module.exports = function(grunt) {
 
   // project configuration
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-
-    config: {
-      demoSources: 'app',
-      sources: 'colors',
-      dist: 'dist'
-    },
 
     browserify: {
       options: {
