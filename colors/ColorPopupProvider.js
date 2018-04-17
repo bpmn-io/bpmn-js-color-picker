@@ -77,7 +77,7 @@ function createAction(modeling, element, newColor) {
     var bo = getBusinessObject(element);
     var di = bo.di;
 
-    var currentColor = di.get('color:background-color');
+    var currentColor = bo.get('bioc:fill');
 
     console.log('Replacing colors from/to: ', currentColor, newColor);
 
@@ -88,10 +88,7 @@ function createAction(modeling, element, newColor) {
     );
 
     modeling.updateProperties(element, {
-      di: {
-        'xmlns:color': ns,
-        'color:background-color': newColor
-      }
+      'bioc:fill': newColor
     });
 
   };
