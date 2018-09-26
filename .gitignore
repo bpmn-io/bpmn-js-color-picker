@@ -1,3 +1,4 @@
 node_modules/
-dist/
+example/vendor/
+example/app.bundled.js
 *.log

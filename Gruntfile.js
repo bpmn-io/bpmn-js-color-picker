@@ -25,12 +25,12 @@ module.exports = function(grunt) {
           watch: true
         },
         files: {
-          'dist/index.js': [ 'app/index.js' ]
+          'example/app.bundled.js': [ 'example/app.js' ]
         }
       },
       app: {
         files: {
-          'dist/index.js': [ 'app/index.js' ]
+          'example/app.bundled.js': [ 'example/app.js' ]
         }
       }
     },
@@ -41,17 +41,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: resolvePath('bpmn-js', 'dist/assets'),
             src: ['**/*.*', '!**/*.js'],
-            dest: 'dist/vendor'
-          }
-        ]
-      },
-      app: {
-        files: [
-          {
-            expand: true,
-            cwd: 'app/',
-            src: ['**/*.*', '!**/*.js', '!**/*.bpmn'],
-            dest: 'dist'
+            dest: 'example/vendor'
           }
         ]
       },
@@ -61,7 +51,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'colors/',
             src: ['**/*.css'],
-            dest: 'dist/vendor/colors'
+            dest: 'example/vendor/colors'
           }
         ]
       }
@@ -69,10 +59,6 @@ module.exports = function(grunt) {
     watch: {
       options: {
         livereload: true
-      },
-      app: {
-        files: [ 'app/**/*.*' ],
-        tasks: [ 'copy:app' ]
       },
       colors: {
         files: [ 'colors/**/*.*' ],
@@ -87,7 +73,7 @@ module.exports = function(grunt) {
           hostname: 'localhost',
           open: true,
           base: [
-            'dist'
+            'example'
           ]
         }
       }
