@@ -48,6 +48,12 @@ function ColorRenderer(eventBus, styles, pathMap, canvas) {
     return shape;
   });
 }
+ColorRenderer.$inject = [
+  "eventBus",
+  "styles",
+  "pathMap",
+  "canvas"
+];
 
 inherits(ColorRenderer, BpmnRenderer);
 
@@ -56,5 +62,5 @@ module.exports = ColorRenderer;
 
 function getBackgroundColor(element) {
   var bo = getBusinessObject(element);
-  return bo.di.get('color:background-color');
+  return bo.get('bioc:fill');
 }
