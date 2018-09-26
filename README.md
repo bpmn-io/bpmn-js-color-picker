@@ -1,5 +1,5 @@
-> __Note:__ This example exists for educational purposes only. 
-> 
+> __Note:__ This example exists for educational purposes only.
+>
 > Consider using our [built-in color support](https://bpmn.io/blog/posts/2016-colors-bpmn-js.html) to display colors saved in your BPMN 2.0 diagrams.
 
 
@@ -46,7 +46,7 @@ Add diagram-js, bpmn-font and [color picker](./colors/color-picker.css) styleshe
 
 ## Build Demo
 
-To run the live demo (as shown in the screenshot above) execute:
+To run the live demo in the [`./example` directory](./example) (as shown in the screenshot above) execute:
 
 ```
 npm run dev
