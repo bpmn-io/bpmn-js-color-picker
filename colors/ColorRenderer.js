@@ -7,11 +7,11 @@ var BpmnRenderer = require('bpmn-js/lib/draw/BpmnRenderer');
 var svgAttr = require('tiny-svg/lib/attr');
 
 
-function ColorRenderer(eventBus, styles, pathMap, canvas) {
+function ColorRenderer(injector, eventBus) {
   // set higher priority then a default 1000 for an existing BpmnRenderer
   var callPriority = 2000;
 
-  BpmnRenderer.call(this, eventBus, styles, pathMap, canvas);
+  injector.invoke(BpmnRenderer, this);
 
   var self = this;
 
@@ -52,6 +52,9 @@ function ColorRenderer(eventBus, styles, pathMap, canvas) {
 inherits(ColorRenderer, BpmnRenderer);
 
 module.exports = ColorRenderer;
+
+
+ColorRenderer.$inject = [ 'injector', 'eventBus' ];
 
 
 function getBackgroundColor(element) {
