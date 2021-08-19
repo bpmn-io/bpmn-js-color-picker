@@ -1,4 +1,2 @@
 node_modules/
-example/vendor/
-example/app.bundled.js
-*.log
+public/

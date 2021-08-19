@@ -3,9 +3,8 @@
   "version": "0.2.0",
   "description": "Bpmn-js with 'bpmn-in-color' extension",
   "scripts": {
-    "all": "run-s lint build",
-    "build": "grunt",
-    "dev": "grunt auto-build",
+    "all": "run-s lint",
+    "start": "webpack serve",
     "lint": "eslint ."
   },
   "keywords": [
@@ -20,17 +19,13 @@
   "license": "MIT",
   "devDependencies": {
     "bpmn-js": "^8.7.1",
-    "brfs": "^1.2.0",
+    "copy-webpack-plugin": "^9.0.1",
     "eslint": "^4.18.2",
     "eslint-plugin-bpmn-io": "^0.5.2",
-    "grunt": "~1.0.1",
-    "grunt-browserify": "^5.0.0",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-connect": "~1.0.2",
-    "grunt-contrib-copy": "~1.0.0",
-    "grunt-contrib-watch": "~1.0.0",
-    "load-grunt-tasks": "~3.5.0",
-    "npm-run-all": "^4.1.2"
+    "npm-run-all": "^4.1.2",
+    "webpack": "^5.51.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
     "min-dom": "^3.1.3",
