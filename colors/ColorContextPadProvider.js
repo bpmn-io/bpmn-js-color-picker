@@ -29,23 +29,18 @@ ColorContextPadProvider.prototype.getContextPadEntries = function(element) {
       title: 'Set Color',
       action: {
         click: function(event, element) {
-          // close any existing popup
-          self._popupMenu.close();
-
-          // create new color-picker popup
-          var colorPicker = self._popupMenu.create('color-picker', element);
 
           // get start popup draw start position
-          var opts = getStartPosition(self._canvas, self._contextPad, element);
-
-          // or fallback to current cursor position
-          opts.cursor = {
-            x: event.x,
-            y: event.y
+          var position = {
+            ...getStartPosition(self._canvas, self._contextPad, element),
+            cursor: {
+              x: event.x,
+              y: event.y
+            }
           };
 
-          // open color picker submenu popup
-          colorPicker.open(opts, element);
+          // open new color-picker popup
+          self._popupMenu.open(element, 'color-picker', position);
         }
       }
     }
