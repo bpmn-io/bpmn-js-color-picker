@@ -2,7 +2,7 @@
 
 This [bpmn-js](https://github.com/bpmn-io/bpmn-js) extension adds a simple color picker to an elements context pad. Colors are serialized to BPMN 2.0 according to the [BPMN in Color proposal](https://github.com/bpmn-miwg/bpmn-in-color).
 
-![bpmn-js color picker in action](./resources/screenshot.png)
+![bpmn-js color picker in action](./resources/screencapture.gif)
 
 
 ## Features
