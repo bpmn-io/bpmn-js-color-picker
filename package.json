@@ -38,5 +38,9 @@
   },
   "peerDependencies": {
     "bpmn-js": ">= 5"
-  }
+  },
+  "files": [
+    "colors/*",
+    "index.js"
+  ]
 }
