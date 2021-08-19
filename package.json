@@ -4,7 +4,7 @@
   "description": "A color picker for bpmn-js",
   "scripts": {
     "all": "run-s lint",
-    "start": "webpack serve",
+    "start": "webpack serve --open",
     "lint": "eslint ."
   },
   "keywords": [
