@@ -1,7 +1,7 @@
 {
-  "name": "bpmn-js-in-color",
+  "name": "bpmn-js-color-picker",
   "version": "0.2.0",
-  "description": "Bpmn-js with 'bpmn-in-color' extension",
+  "description": "A color picker for bpmn-js",
   "scripts": {
     "all": "run-s lint",
     "start": "webpack serve",
