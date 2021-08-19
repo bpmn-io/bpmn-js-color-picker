@@ -1,8 +1,3 @@
-import {
-  getBusinessObject
-} from 'bpmn-js/lib/util/ModelUtil';
-
-
 export default function PopupMenuProvider(popupMenu, modeling) {
   this._popupMenu = popupMenu;
   this._modeling = modeling;
@@ -20,37 +15,38 @@ PopupMenuProvider.$inject = [
 PopupMenuProvider.prototype.getEntries = function(element) {
   var self = this;
 
-  var colors = [
-    {
-      label: 'Red',
-      hex: 'ff0000'
-    }, {
-      label: 'Orange',
-      hex: 'ff7f00'
-    }, {
-      label: 'Yellow',
-      hex: 'ffff00'
-    }, {
-      label: 'Green',
-      hex: '00ff00'
-    }, {
-      label: 'Blue',
-      hex: '0000ff'
-    }, {
-      label: 'Indigo',
-      hex: '4b0082'
-    }, {
-      label: 'Violet',
-      hex: '9400d3'
-    }
-  ];
+  var colors = [{
+    label: 'White',
+    fill: 'white',
+    stroke: 'black'
+  }, {
+    label: 'Blue',
+    fill: '#BBDEFB',
+    stroke: '#1E88E5'
+  }, {
+    label: 'Orange',
+    fill: '#FFE0B2',
+    stroke: '#FB8C00'
+  }, {
+    label: 'Green',
+    fill: '#C8E6C9',
+    stroke: '#43A047'
+  }, {
+    label: 'Red',
+    fill: '#FFCDD2',
+    stroke: '#E53935'
+  }, {
+    label: 'Purple',
+    fill: '#E1BEE7',
+    stroke: '#8E24AA'
+  }];
 
   var entries = colors.map(function(color) {
     return {
       label: color.label,
       id: color.label.toLowerCase() + '-color',
-      className: 'color-icon-' + color.hex,
-      action: createAction(self._modeling, element, '#' + color.hex)
+      className: 'color-icon-' + color.label.toLowerCase(),
+      action: createAction(self._modeling, element, color)
     };
   });
 
@@ -71,8 +67,6 @@ PopupMenuProvider.prototype.getHeaderEntries = function(element) {
 
 function createAction(modeling, element, color) {
   return function() {
-    modeling.setColor(element, {
-      fill: color
-    });
+    modeling.setColor(element, color);
   };
 }

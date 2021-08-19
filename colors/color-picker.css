@@ -17,7 +17,7 @@
   content: '';
   width: 1.5em;
   height: 0.6em;
-  border-radius: 0.5em;
+  border-radius: 0.1em;
   border: 0.03em solid black;
 }
 
@@ -31,35 +31,33 @@
 }
 
 .color-icon-clear:before {
-  background-color: #ffffff;
+  background-color: white;
+  border-color: black;
 }
 
-.color-icon-ff0000:before {
-  background-color: #ff0000;
+.color-icon-blue:before {
+  background-color: #BBDEFB;
+  border-color: #1E88E5;
 }
 
-.color-icon-ff7f00:before {
-  background-color: #ff7f00;
+.color-icon-orange:before {
+  background-color: #FFE0B2;
+  border-color: #FB8C00;
 }
 
-.color-icon-ffff00:before {
-  background-color: #ffff00;
+.color-icon-green:before {
+  background-color: #C8E6C9;
+  border-color: #43A047;
 }
 
-.color-icon-00ff00:before {
-  background-color: #00ff00;
+.color-icon-red:before {
+  background-color: #FFCDD2;
+  border-color: #FB8C00;
 }
 
-.color-icon-0000ff:before {
-  background-color: #0000ff;
-}
-
-.color-icon-4b0082:before {
-  background-color: #4b0082;
-}
-
-.color-icon-9400d3:before {
-  background-color: #9400d3;
+.color-icon-purple:before {
+  background-color: #E1BEE7;
+  border-color: #8E24AA;
 }
 
 /* transparancy for shapes with colors */
