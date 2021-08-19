@@ -1,43 +1,46 @@
-'use strict';
+import newDiagramXML from './newDiagram.bpmn';
 
-var fs = require('fs');
-var BpmnModeler = require('bpmn-js/lib/Modeler');
+import ColorPickerModule from '..';
 
-var canvas = document.querySelector('#canvas');
+import BpmnModeler from 'bpmn-js/lib/Modeler';
 
-// Create new Modeler
-var modeler = new BpmnModeler({
+
+const canvas = document.querySelector('#canvas');
+
+const modeler = new BpmnModeler({
   container: canvas,
   additionalModules: [
-    require('../')
+    ColorPickerModule
   ],
-  keyboard: { bindTo: document }
-});
-
-// Load example diagram
-var newDiagramXML = fs.readFileSync(__dirname + '/newDiagram.bpmn', 'utf-8');
-
-modeler.importXML(newDiagramXML, function(err) {
-  if (err) {
-    console.log('error rendering', err);
-  } else {
-    console.log('rendered');
+  keyboard: {
+    bindTo: document
   }
 });
 
+modeler.importXML(newDiagramXML).then(result => {
 
-// GLOBAL UI
+  const {
+    warnings = []
+  } = result;
+
+  if (warnings.length) {
+    console.log('imported with warnings', warnings);
+  }
+}).catch(error => {
+  console.error('import error', error);
+});
+
+
+// hook up with UI elements
 document.querySelector('#export-to-console').addEventListener('click', function(e) {
+
+  e.preventDefault();
 
   modeler.saveXML({
     format: true
-  }, function(err, xml) {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log(xml);
-    }
+  }).then(result => {
+    console.log(result.xml);
+  }).catch(err => {
+    console.error(err);
   });
-
-  e.preventDefault();
 });

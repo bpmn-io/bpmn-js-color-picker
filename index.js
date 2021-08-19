@@ -1,1 +1,1 @@
-module.exports = require('./colors');
+export { default } from './colors';

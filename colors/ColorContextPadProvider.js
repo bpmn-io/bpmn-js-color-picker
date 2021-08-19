@@ -1,7 +1,4 @@
-'use strict';
-
-
-function ColorContextPadProvider(contextPad, popupMenu, canvas) {
+export default function ColorContextPadProvider(contextPad, popupMenu, canvas) {
 
   this._contextPad = contextPad;
   this._popupMenu = popupMenu;
@@ -16,7 +13,6 @@ ColorContextPadProvider.$inject = [
   'popupMenu',
   'canvas'
 ];
-module.exports = ColorContextPadProvider;
 
 
 ColorContextPadProvider.prototype.getContextPadEntries = function(element) {

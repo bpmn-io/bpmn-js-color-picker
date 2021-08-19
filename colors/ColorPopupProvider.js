@@ -1,9 +1,9 @@
-'use strict';
+import {
+  getBusinessObject
+} from 'bpmn-js/lib/util/ModelUtil';
 
-var getBusinessObject = require('bpmn-js/lib/util/ModelUtil').getBusinessObject;
 
-
-function PopupMenuProvider(popupMenu, modeling) {
+export default function PopupMenuProvider(popupMenu, modeling) {
   this._popupMenu = popupMenu;
   this._modeling = modeling;
 
@@ -15,8 +15,6 @@ PopupMenuProvider.$inject = [
   'popupMenu',
   'modeling'
 ];
-
-module.exports = PopupMenuProvider;
 
 
 PopupMenuProvider.prototype.getEntries = function(element) {

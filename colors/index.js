@@ -1,10 +1,11 @@
-'use strict';
+import ColorContextPadProvider from './ColorContextPadProvider';
+import ColorPopupProvider from './ColorPopupProvider';
 
-module.exports = {
+export default {
   __init__: [
     'colorContextPadProvider',
     'colorPopupProvider'
   ],
-  colorContextPadProvider: [ 'type', require('./ColorContextPadProvider') ],
-  colorPopupProvider: [ 'type', require('./ColorPopupProvider') ]
+  colorContextPadProvider: [ 'type', ColorContextPadProvider ],
+  colorPopupProvider: [ 'type', ColorPopupProvider ]
 };
