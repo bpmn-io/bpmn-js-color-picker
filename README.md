@@ -37,9 +37,9 @@ const modeler = new BpmnModeler({
 Add diagram-js, bpmn-font and [color picker](./colors/color-picker.css) stylesheets:
 
 ```html
-<link rel="stylesheet" href="vendor/diagram-js.css" />
-<link rel="stylesheet" href="vendor/bpmn-font/css/bpmn-embedded.css" />
-<link rel="stylesheet" href="vendor/colors/color-picker.css" />
+<link rel="stylesheet" href="https://unpkg.com/browse/bpmn-js/dist/assets/diagram-js.css" />
+<link rel="stylesheet" href="https://unpkg.com/browse/bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css" />
+<link rel="stylesheet" href="https://unpkg.com/browse/bpmn-js-color-picker/colors/color-picker.css" />
 ```
 
 
