@@ -7,6 +7,7 @@
     "start": "webpack serve --open",
     "lint": "eslint ."
   },
+  "repository": "https://github.com/bpmn-io/bpmn-js-color-picker.git",
   "keywords": [
     "bpmn-js-example",
     "bpmn-in-color",
