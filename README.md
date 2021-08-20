@@ -17,7 +17,7 @@ This [bpmn-js](https://github.com/bpmn-io/bpmn-js) extension adds a simple color
 Fetch `bpmn-js-color-picker` as a dependency:
 
 ```
-npm install bpmn-io/bpmn-js-color-picker --save
+npm install bpmn-js-color-picker --save
 ```
 
 Extend your BPMN modeler with colors:
