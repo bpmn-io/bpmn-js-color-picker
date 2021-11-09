@@ -6,10 +6,6 @@
   box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.6);
 }
 
-.bpmn-icon-color:before {
-    content: '🖌';
-}
-
 /* color popup menu */
 [class^="color-icon-"]:before,
 [class*=" color-icon-"]:before {
@@ -19,15 +15,6 @@
   height: 0.6em;
   border-radius: 0.1em;
   border: 0.03em solid black;
-}
-
-.djs-popup-header .entry.color-icon-clear {
-  margin-left: 5px;
-  padding: 0;
-}
-
-.djs-popup-header .entry.color-icon-clear > span {
-  margin-left: 5px;
 }
 
 .color-icon-clear:before {
@@ -64,4 +51,3 @@
 .color-transparancy {
   fill-opacity: 0.50;
 }
-
