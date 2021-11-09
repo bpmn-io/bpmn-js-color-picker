@@ -3,6 +3,7 @@
   "version": "0.3.1",
   "description": "A color picker for bpmn-js",
   "scripts": {
+    "dev": "npm start",
     "all": "run-s lint",
     "start": "webpack serve --open",
     "lint": "eslint ."
