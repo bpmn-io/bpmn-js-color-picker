@@ -1,8 +1,9 @@
-export default function ColorContextPadProvider(contextPad, popupMenu, canvas) {
+export default function ColorContextPadProvider(contextPad, popupMenu, canvas, translate) {
 
   this._contextPad = contextPad;
   this._popupMenu = popupMenu;
   this._canvas = canvas;
+  this._translate = translate;
 
   contextPad.registerProvider(this);
 }
@@ -11,7 +12,8 @@ export default function ColorContextPadProvider(contextPad, popupMenu, canvas) {
 ColorContextPadProvider.$inject = [
   'contextPad',
   'popupMenu',
-  'canvas'
+  'canvas',
+  'translate'
 ];
 
 
@@ -22,7 +24,7 @@ ColorContextPadProvider.prototype.getContextPadEntries = function(element) {
     'set-color': {
       group: 'edit',
       className: 'bpmn-icon-color',
-      title: 'Set Color',
+      title: self._translate('Set Color'),
       action: {
         click: function(event, element) {
 
