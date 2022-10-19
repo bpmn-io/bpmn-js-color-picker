@@ -24,23 +24,23 @@ ColorPopupProvider.prototype.getEntries = function(element) {
   }, {
     label: 'Blue',
     fill: '#BBDEFB',
-    stroke: '#1E88E5'
+    stroke: '#0D4372'
   }, {
     label: 'Orange',
     fill: '#FFE0B2',
-    stroke: '#FB8C00'
+    stroke: '#6B3C00'
   }, {
     label: 'Green',
     fill: '#C8E6C9',
-    stroke: '#43A047'
+    stroke: '#205022'
   }, {
     label: 'Red',
     fill: '#FFCDD2',
-    stroke: '#E53935'
+    stroke: '#831311'
   }, {
     label: 'Purple',
     fill: '#E1BEE7',
-    stroke: '#8E24AA'
+    stroke: '#5B176D'
   }];
 
   var entries = colors.map(function(color) {
