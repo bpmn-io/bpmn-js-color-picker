@@ -6,6 +6,10 @@ All notable changes to [bpmn-js-color-picker](https://github.com/bpmn-io/bpmn-js
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.4.1
+
+* `FIX`: increase contrast ([#9](https://github.com/bpmn-io/bpmn-js-color-picker/pull/9))
+
 ## 0.4.0
 
 * `FEAT`: simplify color picker
