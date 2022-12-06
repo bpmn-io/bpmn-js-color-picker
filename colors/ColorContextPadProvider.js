@@ -1,6 +1,4 @@
-const colorImageSvg = '<svg viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg">' +
-  '<path d="m1660 108-395 397-108 107-196-56-205-57-3 4-165 164 394 394 393 393 165-164v-1l3-3-57-204-51-181 113-113 395-396zM471 786l-366 366 393 393 394 395 366-367-393-394Z" />' +
-'</svg>';
+const colorImageSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><path d="m12.5 5.5.3-.4 3.6-3.6c.5-.5 1.3-.5 1.7 0l1 1c.5.4.5 1.2 0 1.7l-3.6 3.6-.4.2v.2c0 1.4.6 2 1 2.7v.6l-1.7 1.6c-.2.2-.4.2-.6 0L7.3 6.6a.4.4 0 0 1 0-.6l.3-.3.5-.5.8-.8c.2-.2.4-.1.6 0 .9.5 1.5 1.1 3 1.1zm-9.9 6 4.2-4.2 6.3 6.3-4.2 4.2c-.3.3-.9.3-1.2 0l-.8-.8-.9-.8-2.3-2.9" /></svg>';
 
 const colorImageUrl = 'data:image/svg+xml;utf8,' + encodeURIComponent(colorImageSvg);
 

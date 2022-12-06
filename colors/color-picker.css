@@ -1,7 +1,10 @@
 /* COLOR PICKER */
 
-/* context pad */
-.djs-context-pad .entry {
-  background-color: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.6);
+.djs-popup.color-picker .entry {
+    margin: 0;
+}
+
+.djs-popup.color-picker .djs-popup-group {
+  display: grid;
+  grid: auto-flow / 1fr 1fr 1fr;
 }
