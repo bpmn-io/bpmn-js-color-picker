@@ -17,7 +17,7 @@ ColorPopupProvider.$inject = [
 ColorPopupProvider.prototype.getEntries = function(element) {
   var self = this;
 
-  var colors = [{
+  var colors = [ {
     label: 'Default',
     fill: undefined,
     stroke: undefined
@@ -41,7 +41,7 @@ ColorPopupProvider.prototype.getEntries = function(element) {
     label: 'Purple',
     fill: '#E1BEE7',
     stroke: '#5B176D'
-  }];
+  } ];
 
   var entries = colors.map(function(color) {
     return {
