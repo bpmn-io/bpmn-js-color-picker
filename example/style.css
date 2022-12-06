@@ -5,12 +5,6 @@ html, body {
   padding: 0;
 }
 
-
-/* FIX CONTEXT PAD ENTRIES */
-.djs-context-pad .entry:before {
-  margin: 0;
-}
-
 .canvas {
   position: absolute;
   left: 0;
