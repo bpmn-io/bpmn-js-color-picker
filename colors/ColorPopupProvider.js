@@ -1,3 +1,7 @@
+import {
+  domify
+} from 'min-dom';
+
 const COLORS = [ {
   label: 'Default',
   fill: undefined,
@@ -47,12 +51,21 @@ ColorPopupProvider.$inject = [
 ColorPopupProvider.prototype.getEntries = function(elements) {
   var self = this;
 
+  var colorIcon = domify(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="100%">
+      <rect rx="2" x="1" y="1" width="22" height="22" fill="var(--fill-color)" stroke="var(--stroke-color)"></rect>
+    </svg>
+  `);
+
   var entries = this._colors.map(function(color) {
+
+    colorIcon.style.setProperty('--fill-color', color.fill || 'white');
+    colorIcon.style.setProperty('--stroke-color', color.stroke || 'rgb(34, 36, 42)');
 
     return {
       title: self._translate(color.label),
       id: color.label.toLowerCase() + '-color',
-      className: 'color-icon-' + color.label.toLowerCase(),
+      imageUrl: `data:image/svg+xml;utf8,${ encodeURIComponent(colorIcon.outerHTML) }`,
       action: createAction(self._modeling, elements, color)
     };
   });
