@@ -44,7 +44,7 @@ ColorPopupProvider.$inject = [
 ];
 
 
-ColorPopupProvider.prototype.getEntries = function(element) {
+ColorPopupProvider.prototype.getEntries = function(elements) {
   var self = this;
 
   var entries = this._colors.map(function(color) {
@@ -53,7 +53,7 @@ ColorPopupProvider.prototype.getEntries = function(element) {
       title: self._translate(color.label),
       id: color.label.toLowerCase() + '-color',
       className: 'color-icon-' + color.label.toLowerCase(),
-      action: createAction(self._modeling, element, color)
+      action: createAction(self._modeling, elements, color)
     };
   });
 
