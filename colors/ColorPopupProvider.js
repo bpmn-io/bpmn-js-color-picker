@@ -25,16 +25,19 @@ const COLORS = [ {
 } ];
 
 
-export default function ColorPopupProvider(popupMenu, modeling, translate) {
+export default function ColorPopupProvider(config, popupMenu, modeling, translate) {
   this._popupMenu = popupMenu;
   this._modeling = modeling;
   this._translate = translate;
+
+  this._colors = config && config.colors || COLORS;
 
   this._popupMenu.registerProvider('color-picker', this);
 }
 
 
 ColorPopupProvider.$inject = [
+  'config.colorPicker',
   'popupMenu',
   'modeling',
   'translate'
@@ -44,7 +47,7 @@ ColorPopupProvider.$inject = [
 ColorPopupProvider.prototype.getEntries = function(element) {
   var self = this;
 
-  var entries = COLORS.map(function(color) {
+  var entries = this._colors.map(function(color) {
 
     return {
       title: self._translate(color.label),
