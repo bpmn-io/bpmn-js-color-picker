@@ -25,20 +25,34 @@ ColorContextPadProvider.$inject = [
 
 
 ColorContextPadProvider.prototype.getContextPadEntries = function(element) {
-  var self = this;
+  return this._createPopupAction([ element ]);
+};
 
-  var actions = {
+
+ColorContextPadProvider.prototype.getMultiElementContextPadEntries = function(elements) {
+
+  return this._createPopupAction(elements);
+};
+
+ColorContextPadProvider.prototype._createPopupAction = function(elements) {
+
+  const canvas = this._canvas;
+  const translate = this._translate;
+  const contextPad = this._contextPad;
+  const popupMenu = this._popupMenu;
+
+  return {
     'set-color': {
       group: 'edit',
       className: 'bpmn-icon-color',
-      title: self._translate('Set Color'),
+      title: translate('Set Color'),
       imageUrl: colorImageUrl,
       action: {
-        click: function(event, element) {
+        click: (event, element) => {
 
           // get start popup draw start position
           var position = {
-            ...getStartPosition(self._canvas, self._contextPad, element),
+            ...getStartPosition(canvas, contextPad, elements[0]),
             cursor: {
               x: event.x,
               y: event.y
@@ -46,13 +60,12 @@ ColorContextPadProvider.prototype.getContextPadEntries = function(element) {
           };
 
           // open new color-picker popup
-          self._popupMenu.open(element, 'color-picker', position);
+          popupMenu.open(elements, 'color-picker', position);
         }
       }
     }
   };
 
-  return actions;
 };
 
 
