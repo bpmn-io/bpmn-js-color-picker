@@ -50,7 +50,7 @@ ColorContextPadProvider.prototype._createPopupAction = function(elements) {
 
           // get start popup draw start position
           var position = {
-            ...getStartPosition(canvas, contextPad, elements[0]),
+            ...getStartPosition(canvas, contextPad, elements),
             cursor: {
               x: event.x,
               y: event.y
@@ -69,12 +69,12 @@ ColorContextPadProvider.prototype._createPopupAction = function(elements) {
 
 // helpers //////////////////////
 
-function getStartPosition(canvas, contextPad, element) {
+function getStartPosition(canvas, contextPad, elements) {
 
   var Y_OFFSET = 5;
 
   var diagramContainer = canvas.getContainer(),
-      pad = contextPad.getPad(element).html;
+      pad = contextPad.getPad(elements).html;
 
   var diagramRect = diagramContainer.getBoundingClientRect(),
       padRect = pad.getBoundingClientRect();
