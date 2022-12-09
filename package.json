@@ -4,9 +4,10 @@
   "description": "A color picker for bpmn-js",
   "scripts": {
     "dev": "npm start",
-    "all": "run-s lint",
+    "all": "run-s lint test",
     "start": "webpack serve --open",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "echo 'no tests ;-)'"
   },
   "repository": "https://github.com/bpmn-io/bpmn-js-color-picker.git",
   "keywords": [
