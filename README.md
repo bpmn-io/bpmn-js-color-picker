@@ -9,7 +9,8 @@ This [bpmn-js](https://github.com/bpmn-io/bpmn-js) extension adds a simple color
 
 ## Features
 
-* Add color picker to an elements context pad
+* Add color picker to the context pad
+* Color single and multiple elements
 * Serialize colors to BPMN 2.0
 * Render colors (built-in `bpmn-js@8.7+`)
 
