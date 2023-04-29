@@ -60,7 +60,7 @@ ColorPopupProvider.prototype.getEntries = function(elements) {
 
   var colorIcon = domify(`
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="100%">
-      <rect rx="2" x="1" y="1" width="22" height="22" fill="var(--fill-color)" stroke="var(--stroke-color)"></rect>
+      <rect rx="2" x="1" y="1" width="22" height="22" fill="var(--fill-color)" stroke="var(--stroke-color)" style="stroke-width:2"></rect>
     </svg>
   `);
   const theme = (this._theme && this._theme) || 'light';
