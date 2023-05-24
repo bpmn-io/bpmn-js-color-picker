@@ -35,6 +35,8 @@ export default function ColorPopupProvider(config, popupMenu, modeling, translat
   this._translate = translate;
 
   this._colors = config && config.colors || COLORS;
+  this._defaultFill = config && config.defaultFill || 'white';
+  this._defaultStroke = config && config.defaultStroke || 'rgb(34, 36, 42)';
 
   this._popupMenu.registerProvider('color-picker', this);
 }
@@ -59,8 +61,8 @@ ColorPopupProvider.prototype.getEntries = function(elements) {
 
   var entries = this._colors.map(function(color) {
 
-    colorIcon.style.setProperty('--fill-color', color.fill || 'white');
-    colorIcon.style.setProperty('--stroke-color', color.stroke || 'rgb(34, 36, 42)');
+    colorIcon.style.setProperty('--fill-color', color.fill || self._defaultFill);
+    colorIcon.style.setProperty('--stroke-color', color.stroke || self._defaultStroke);
 
     return {
       title: self._translate(color.label),
