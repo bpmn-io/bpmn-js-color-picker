@@ -35,6 +35,8 @@ export default function ColorPopupProvider(config, popupMenu, modeling, translat
   this._translate = translate;
 
   this._colors = config && config.colors || COLORS;
+  this._defaultFillColor = config && config.defaultFillColor || 'white';
+  this._defaultStrokeColor = config && config.defaultStrokeColor || 'rgb(34, 36, 42)';
 
   this._popupMenu.registerProvider('color-picker', this);
 }
@@ -53,14 +55,14 @@ ColorPopupProvider.prototype.getEntries = function(elements) {
 
   var colorIcon = domify(`
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="100%">
-      <rect rx="2" x="1" y="1" width="22" height="22" fill="var(--fill-color)" stroke="var(--stroke-color)"></rect>
+      <rect rx="2" x="1" y="1" width="22" height="22" fill="var(--fill-color)" stroke="var(--stroke-color)" style="stroke-width:2"></rect>
     </svg>
   `);
 
   var entries = this._colors.map(function(color) {
 
-    colorIcon.style.setProperty('--fill-color', color.fill || 'white');
-    colorIcon.style.setProperty('--stroke-color', color.stroke || 'rgb(34, 36, 42)');
+    colorIcon.style.setProperty('--fill-color', color.fill || self._defaultFillColor);
+    colorIcon.style.setProperty('--stroke-color', color.stroke || self._defaultStrokeColor);
 
     return {
       title: self._translate(color.label),
