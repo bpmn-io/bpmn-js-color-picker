@@ -29,14 +29,14 @@ const COLORS = [ {
 } ];
 
 
-export default function ColorPopupProvider(config, popupMenu, modeling, translate) {
+export default function ColorPopupProvider(config, bpmnRendererConfig, popupMenu, modeling, translate) {
   this._popupMenu = popupMenu;
   this._modeling = modeling;
   this._translate = translate;
 
   this._colors = config && config.colors || COLORS;
-  this._defaultFillColor = config && config.defaultFillColor || 'white';
-  this._defaultStrokeColor = config && config.defaultStrokeColor || 'rgb(34, 36, 42)';
+  this._defaultFillColor = bpmnRendererConfig && bpmnRendererConfig.defaultFillColor || 'white';
+  this._defaultStrokeColor = bpmnRendererConfig && bpmnRendererConfig.defaultStrokeColor || 'rgb(34, 36, 42)';
 
   this._popupMenu.registerProvider('color-picker', this);
 }
@@ -44,6 +44,7 @@ export default function ColorPopupProvider(config, popupMenu, modeling, translat
 
 ColorPopupProvider.$inject = [
   'config.colorPicker',
+  'config.bpmnRenderer',
   'popupMenu',
   'modeling',
   'translate'
