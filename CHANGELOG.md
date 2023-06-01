@@ -6,6 +6,11 @@ All notable changes to [bpmn-js-color-picker](https://github.com/bpmn-io/bpmn-js
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.6.0
+
+* `FEAT`: allow icon hover styling ([#24](https://github.com/bpmn-io/bpmn-js-color-picker/pull/24), [#27](https://github.com/bpmn-io/bpmn-js-color-picker/pull/27))
+* `FEAT`: respect default renderer fill and stoke color ([#26](https://github.com/bpmn-io/bpmn-js-color-picker/pull/26))
+
 ## 0.5.0
 
 * `FEAT`: improve default color contrast ([#9](https://github.com/bpmn-io/bpmn-js-color-picker/pull/9))
