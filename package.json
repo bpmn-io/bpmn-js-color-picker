@@ -21,20 +21,17 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "bpmn-js": "^11.0.4",
-    "copy-webpack-plugin": "^9.0.1",
-    "eslint": "^8.29.0",
-    "eslint-plugin-bpmn-io": "^0.16.0",
+    "bpmn-js": "^14.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "eslint": "^8.52.0",
+    "eslint-plugin-bpmn-io": "^1.0.0",
     "npm-run-all": "^4.1.2",
     "webpack": "^5.51.0",
-    "webpack-cli": "^4.8.0",
+    "webpack-cli": "^5.1.0",
     "webpack-dev-server": "^4.0.0"
   },
-  "dependencies": {
-    "min-dom": "^4.0.3"
-  },
   "peerDependencies": {
-    "bpmn-js": ">= 11"
+    "bpmn-js": ">= 14"
   },
   "files": [
     "colors/*",
