@@ -1,7 +1,3 @@
-import {
-  domify
-} from 'min-dom';
-
 const COLORS = [ {
   label: 'Default',
   fill: undefined,
@@ -54,21 +50,21 @@ ColorPopupProvider.$inject = [
 ColorPopupProvider.prototype.getEntries = function(elements) {
   var self = this;
 
-  var colorIcon = domify(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="100%">
+  var colorIconHtml = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="100%" width="100%">
       <rect rx="2" x="1" y="1" width="22" height="22" fill="var(--fill-color)" stroke="var(--stroke-color)" style="stroke-width:2"></rect>
     </svg>
-  `);
+  `;
 
   var entries = this._colors.map(function(color) {
 
-    colorIcon.style.setProperty('--fill-color', color.fill || self._defaultFillColor);
-    colorIcon.style.setProperty('--stroke-color', color.stroke || self._defaultStrokeColor);
+    var entryColorIconHtml = colorIconHtml.replace('var(--fill-color)', color.fill || self._defaultFillColor)
+      .replace('var(--stroke-color)', color.stroke || self._defaultStrokeColor);
 
     return {
       title: self._translate(color.label),
       id: color.label.toLowerCase() + '-color',
-      imageUrl: `data:image/svg+xml;utf8,${ encodeURIComponent(colorIcon.outerHTML) }`,
+      imageHtml: entryColorIconHtml,
       action: createAction(self._modeling, elements, color)
     };
   });
