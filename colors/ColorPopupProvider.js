@@ -51,8 +51,8 @@ ColorPopupProvider.prototype.getEntries = function(elements) {
   var self = this;
 
   var colorIconHtml = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="100%" width="100%">
-      <rect rx="2" x="1" y="1" width="20" height="20" fill="var(--fill-color)" stroke="var(--stroke-color)" style="stroke-width:2"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="100%" width="100%">
+      <rect rx="2" x="1" y="1" width="22" height="22" fill="var(--fill-color)" stroke="var(--stroke-color)" style="stroke-width:2"></rect>
     </svg>
   `;
 
