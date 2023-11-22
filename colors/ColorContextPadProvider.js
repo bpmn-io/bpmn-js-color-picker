@@ -43,7 +43,7 @@ ColorContextPadProvider.prototype._createPopupAction = function(elements) {
     'set-color': {
       group: 'edit',
       className: 'bpmn-icon-color',
-      title: translate('Set Color'),
+      title: translate('Set color'),
       html: `<div class="entry">${colorImageSvg}</div>`,
       action: {
         click: (event, element) => {
