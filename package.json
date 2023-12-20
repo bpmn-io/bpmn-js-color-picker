@@ -15,6 +15,9 @@
     "bpmn-in-color",
     "bpmn"
   ],
+  "engines": {
+    "node": "*"
+  },
   "author": {
     "name": "Vladimirs Katusenoks",
     "url": "https://github.com/vkatushenok"
