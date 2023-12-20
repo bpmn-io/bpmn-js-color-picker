@@ -6,6 +6,12 @@ All notable changes to [bpmn-js-color-picker](https://github.com/bpmn-io/bpmn-js
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.7.0
+
+* `FEAT`: sentence-case labels ([`325dd81`](https://github.com/bpmn-io/bpmn-js-color-picker/commit/325dd813c3fc784df92fa27104bc5290d15aa190))
+* `FEAT`: use `imageHtml` for icon rendering ([`36b39a9`](https://github.com/bpmn-io/bpmn-js-color-picker/commit/36b39a9267c19f61b415b384123a711ca38e3a38))
+* `FEAT`: add `module` export
+
 ## 0.6.1
 
 * `CHORE`: add LICENSE
