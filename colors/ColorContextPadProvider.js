@@ -34,7 +34,6 @@ ColorContextPadProvider.prototype.getMultiElementContextPadEntries = function(el
 
 ColorContextPadProvider.prototype._createPopupAction = function(elements) {
 
-  const canvas = this._canvas;
   const translate = this._translate;
   const contextPad = this._contextPad;
   const popupMenu = this._popupMenu;
@@ -50,7 +49,7 @@ ColorContextPadProvider.prototype._createPopupAction = function(elements) {
 
           // get start popup draw start position
           var position = {
-            ...getStartPosition(canvas, contextPad, elements),
+            ...getStartPosition(contextPad, elements),
             cursor: {
               x: event.x,
               y: event.y
@@ -69,22 +68,15 @@ ColorContextPadProvider.prototype._createPopupAction = function(elements) {
 
 // helpers //////////////////////
 
-function getStartPosition(canvas, contextPad, elements) {
+function getStartPosition(contextPad, elements) {
 
-  var Y_OFFSET = 5;
+  var pad = contextPad.getPad(elements).html;
 
-  var diagramContainer = canvas.getContainer(),
-      pad = contextPad.getPad(elements).html;
-
-  var diagramRect = diagramContainer.getBoundingClientRect(),
-      padRect = pad.getBoundingClientRect();
-
-  var top = padRect.top - diagramRect.top;
-  var left = padRect.left - diagramRect.left;
+  var padRect = pad.getBoundingClientRect();
 
   var pos = {
-    x: left,
-    y: top + padRect.height + Y_OFFSET
+    x: padRect.left,
+    y: padRect.top,
   };
 
   return pos;
