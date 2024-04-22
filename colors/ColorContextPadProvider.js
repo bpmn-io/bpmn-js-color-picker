@@ -70,13 +70,15 @@ ColorContextPadProvider.prototype._createPopupAction = function(elements) {
 
 function getStartPosition(contextPad, elements) {
 
+  var Y_OFFSET = 5;
+
   var pad = contextPad.getPad(elements).html;
 
   var padRect = pad.getBoundingClientRect();
 
   var pos = {
     x: padRect.left,
-    y: padRect.top,
+    y: padRect.bottom + Y_OFFSET
   };
 
   return pos;
