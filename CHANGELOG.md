@@ -6,6 +6,10 @@ All notable changes to [bpmn-js-color-picker](https://github.com/bpmn-io/bpmn-js
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.7.1
+
+* `FIX`: correct positioning of color picker ([#40](https://github.com/bpmn-io/bpmn-js-color-picker/issues/40))
+
 ## 0.7.0
 
 * `FEAT`: sentence-case labels ([`325dd81`](https://github.com/bpmn-io/bpmn-js-color-picker/commit/325dd813c3fc784df92fa27104bc5290d15aa190))
