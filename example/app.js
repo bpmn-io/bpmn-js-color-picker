@@ -11,10 +11,7 @@ const modeler = new BpmnModeler({
   container: canvas,
   additionalModules: [
     ColorPickerModule
-  ],
-  keyboard: {
-    bindTo: document
-  }
+  ]
 });
 
 modeler.importXML(newDiagramXML).then(result => {
