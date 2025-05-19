@@ -25,12 +25,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "bpmn-js": "^18.0.0",
+    "bpmn-js": "^18.6.1",
     "copy-webpack-plugin": "^13.0.0",
-    "eslint": "^9.12.0",
-    "eslint-plugin-bpmn-io": "^2.0.2",
+    "eslint": "^9.27.0",
+    "eslint-plugin-bpmn-io": "^2.2.0",
     "npm-run-all2": "^8.0.0",
-    "webpack": "^5.51.0",
+    "webpack": "^5.99.8",
     "webpack-cli": "^6.0.0",
     "webpack-dev-server": "^5.0.0"
   },
