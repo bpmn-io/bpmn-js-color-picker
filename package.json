@@ -15,8 +15,7 @@
     "bpmn-in-color",
     "bpmn"
   ],
-  "type": "module",
-  "module": "./colors/index.js",
+  "main": "./colors/index.js",
   "engines": {
     "node": "*"
   },
