@@ -6,6 +6,10 @@ All notable changes to [bpmn-js-color-picker](https://github.com/bpmn-io/bpmn-js
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.7.2
+
+* `FIX`: replace `module` field with `main` ([#51](https://github.com/bpmn-io/bpmn-js-color-picker/issues/51))
+
 ## 0.7.1
 
 * `FIX`: correct positioning of color picker ([#40](https://github.com/bpmn-io/bpmn-js-color-picker/issues/40))
