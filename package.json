@@ -29,7 +29,7 @@
     "copy-webpack-plugin": "^14.0.0",
     "eslint": "^9.27.0",
     "eslint-plugin-bpmn-io": "^2.2.0",
-    "npm-run-all2": "^8.0.0",
+    "npm-run-all2": "^9.0.0",
     "webpack": "^5.99.8",
     "webpack-cli": "^7.0.0",
     "webpack-dev-server": "^5.0.0"
